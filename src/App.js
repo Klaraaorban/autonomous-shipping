@@ -95,7 +95,49 @@ Our project develops autonomous underwater drones equipped with advanced sensors
 
       </motion.div>
 
-      {/* Call to Action */}
+    {/* Project Image */}
+      <div style={{ 
+        width: "100%", 
+        maxWidth: "900px", 
+        margin: "40px 0", 
+        overflow: "hidden", 
+        borderRadius: "24px",  // rounded corners
+        boxShadow: "0 10px 30px rgba(0,0,0,0.4)"
+      }}>
+        <img 
+          src="/drone.png"  // use relative path from public folder
+          alt="Underwater Ice Mapping Drone" 
+          style={{ 
+            width: "100%", 
+            height: "auto", 
+            display: "block",
+            borderRadius: "24px"  // optional, ensures image itself is rounded
+          }} 
+        />
+      </div>
+
+
+
+    {/* Additional Project Details */}
+    <div style={{ maxWidth: "900px", marginTop: "48px", padding: "16px", color: "#cbd5e1", lineHeight: "1.7" }}>
+      <h3 style={{ fontSize: "1.75rem", fontWeight: "600", color: "#06b6d4", marginBottom: "16px" }}>
+        About the Project
+      </h3>
+      <p>
+        Maritime technology has advanced rapidly, making progress in polar navigation both urgent and important. Global warming is opening routes previously blocked by ice, offering the potential to reduce travel time, costs, and fuel consumption by up to 40%. 
+      </p>
+      <p>
+        Navigating polar seas is challenging due to numerous ice blocks and constantly shifting conditions, which can damage ship hulls and make routes unpredictable. Our solution uses autonomous underwater drones equipped with multibeam sonar and other sensors to map submerged ice structures in 3D.
+      </p>
+      <p>
+        The data collected will generate high-resolution maps and predictive models to improve real-time navigation safety, enhance efficiency, and provide a foundation for future research in autonomous polar navigation.
+      </p>
+      <p>
+        The project is a collaboration between the University of Rostock in Germany and Babeș-Bolyai University in Romania, offering students a hybrid work environment with opportunities in both Rostock and Cluj-Napoca.
+      </p>
+    </div>
+
+
       <motion.div
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
@@ -107,10 +149,23 @@ Our project develops autonomous underwater drones equipped with advanced sensors
           style={buttonStyle}
           onMouseOver={e => e.currentTarget.style.backgroundColor = "#0ea5e9"}
           onMouseOut={e => e.currentTarget.style.backgroundColor = "#06b6d4"}
+          onClick={() => window.open("https://forms.office.com/Pages/ResponsePage.aspx?id=7WNIWshA1U-CmPv9t_EwlTm9gyCIRSZHqFMx-cQk0sRUQUtXRU9EUzlBS1FJM1lEWjcxMU9SWFA3My4u", "_blank")}
         >
           Apply Now
         </button>
+
+        {/* For More Information */}
+      <p style={{ marginTop: "24px", color: "#94a3b8", fontSize: "0.95rem", fontStyle: "italic" }}>
+        For more information, contact:{" "}
+        <a 
+          href="mailto:klara.orban@stud.ubbcluj.ro" 
+          style={{ color: "#06b6d4", fontWeight: "500", textDecoration: "underline" }}
+        >
+          Orban Klara
+        </a>
+      </p>
       </motion.div>
+
 
       {/* Subtle Animated Background */}
       <motion.div
@@ -124,5 +179,7 @@ Our project develops autonomous underwater drones equipped with advanced sensors
         }}
       />
     </div>
+
+    
   );
 }
