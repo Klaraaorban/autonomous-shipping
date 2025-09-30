@@ -35,11 +35,23 @@ export default function LandingPage() {
       >
         <h1 style={{ fontSize: "3rem", fontWeight: "bold", marginBottom: "16px", display: "flex", justifyContent: "center", alignItems: "center", gap: "12px" }}>
           <Waves size={48} color="#06b6d4" />
-          Autonomous Shipping
+          ArctiCODE
         </h1>
+        <h2
+          style={{
+            fontSize: "1.5rem",
+            fontWeight: "500",
+            color: "#06b6d4",
+            marginBottom: "16px",
+            textAlign: "center",
+          }}
+        >
+          Underwater Ice Mapping for Safe Polar Navigation
+        </h2>
         <p style={{ fontSize: "1.125rem", color: "#cbd5e1" }}>
-          Join us in designing autonomous underwater drones that can operate in arctic environments and map the hidden world below. By exploring places humans can’t reach, our purpose is to reveal the shape and movement of the ice, creating a new way of understanding the viability of polar routes in the context of autonomous shipping.
-        </p>
+          Climate change is rapidly reshaping the Arctic, opening new shipping routes but also exposing ships to hidden risks. Ice blocks beneath the surface shift constantly, making navigation unpredictable and dangerous.
+Our project develops autonomous underwater drones equipped with advanced sensors to map these submerged ice structures in 3D. By turning real-world data into predictive models, we aim to make polar navigation safer, smarter, and more sustainable.
+          </p>
       </motion.div>
 
       {/* Open Position Section */}
@@ -55,29 +67,77 @@ export default function LandingPage() {
           <p style={{ color: "#cbd5e1" }}>
             We’re looking for a passionate and motivated <span style={{ color: "#06b6d4", fontWeight: "500" }}>student</span> who is team-oriented, passionate about real-world innovation, and eager to learn.
           </p>
-          <p style={{ color: "#cbd5e1", marginTop: "16px" }}>Experience with the following is a plus:</p>
+          <p style={{ color: "#cbd5e1", marginTop: "16px" }}>Competences awaited:</p>
           <ul style={{ color: "#cbd5e1", marginTop: "12px", listStyle: "disc inside", lineHeight: "1.6" }}>
-            <li>Unity or other simulation tools</li>
-            <li>Machine learning</li>
-            <li>Working with sensors</li>
-            <li>Robotics and control systems</li>
+            <li>Strong knowledge in Python</li>
+            <li>Experience in Machine Learning</li>
+            <li>Good communication skills</li>
+            <li>Ability to take initiatives</li>
+            <li>Adaptability in group projects</li>
+            <li>Fluency in both German and English</li>
           </ul>
         </div>
 
         <div style={cardStyle}>
           <h2 style={{ fontSize: "1.5rem", fontWeight: "600", color: "#06b6d4", marginBottom: "16px" }}>What We Offer:</h2>
-          <p style={{ color: "#cbd5e1" }}>By joining our team, you’ll benefit from:</p>
+          <p style={{ color: "#cbd5e1" }}>
+            By joining our team, you’ll gain hands-on experience and contribute to real-world polar research:
+          </p>
+          <p style={{ color: "#cbd5e1", marginTop: "16px" }}>Opportunities offered:</p>
           <ul style={{ color: "#cbd5e1", marginTop: "12px", listStyle: "disc inside", lineHeight: "1.6" }}>
-            <li>Hands-on experience with marine robotics</li>
-            <li>Opportunities to contribute to a less explored research area</li>
-            <li>A collaborative, innovation-driven environment</li>
-            <li>Access to simulation tools, hardware, and resources</li>
-            <li>Opportunities for long-term involvement as the project grows</li>
+            <li>Work with underwater drones and sensors</li>
+            <li>Hands-on experience in 3D mapping & ML</li>
+            <li>Collaboration with international teams</li>
+            <li>Flexible hybrid work setup</li>
+            <li>Shape the future of polar navigation</li>
           </ul>
         </div>
+
       </motion.div>
 
-      {/* Call to Action */}
+    {/* Project Image */}
+      <div style={{ 
+        width: "100%", 
+        maxWidth: "900px", 
+        margin: "40px 0", 
+        overflow: "hidden", 
+        borderRadius: "24px",  // rounded corners
+        boxShadow: "0 10px 30px rgba(0,0,0,0.4)"
+      }}>
+        <img 
+          src="/drone.png"  // use relative path from public folder
+          alt="Underwater Ice Mapping Drone" 
+          style={{ 
+            width: "100%", 
+            height: "auto", 
+            display: "block",
+            borderRadius: "24px"  // optional, ensures image itself is rounded
+          }} 
+        />
+      </div>
+
+
+
+    {/* Additional Project Details */}
+    <div style={{ maxWidth: "900px", marginTop: "48px", padding: "16px", color: "#cbd5e1", lineHeight: "1.7" }}>
+      <h3 style={{ fontSize: "1.75rem", fontWeight: "600", color: "#06b6d4", marginBottom: "16px" }}>
+        About the Project
+      </h3>
+      <p>
+        Maritime technology has advanced rapidly, making progress in polar navigation both urgent and important. Global warming is opening routes previously blocked by ice, offering the potential to reduce travel time, costs, and fuel consumption by up to 40%. 
+      </p>
+      <p>
+        Navigating polar seas is challenging due to numerous ice blocks and constantly shifting conditions, which can damage ship hulls and make routes unpredictable. Our solution uses autonomous underwater drones equipped with multibeam sonar and other sensors to map submerged ice structures in 3D.
+      </p>
+      <p>
+        The data collected will generate high-resolution maps and predictive models to improve real-time navigation safety, enhance efficiency, and provide a foundation for future research in autonomous polar navigation.
+      </p>
+      <p>
+        The project is a collaboration between the University of Rostock in Germany and Babeș-Bolyai University in Romania, offering students a hybrid work environment with opportunities in both Rostock and Cluj-Napoca.
+      </p>
+    </div>
+
+
       <motion.div
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
@@ -89,10 +149,23 @@ export default function LandingPage() {
           style={buttonStyle}
           onMouseOver={e => e.currentTarget.style.backgroundColor = "#0ea5e9"}
           onMouseOut={e => e.currentTarget.style.backgroundColor = "#06b6d4"}
+          onClick={() => window.open("https://forms.office.com/Pages/ResponsePage.aspx?id=7WNIWshA1U-CmPv9t_EwlTm9gyCIRSZHqFMx-cQk0sRUQUtXRU9EUzlBS1FJM1lEWjcxMU9SWFA3My4u", "_blank")}
         >
           Apply Now
         </button>
+
+        {/* For More Information */}
+      <p style={{ marginTop: "24px", color: "#94a3b8", fontSize: "0.95rem", fontStyle: "italic" }}>
+        For more information, contact:{" "}
+        <a 
+          href="mailto:klara.orban@stud.ubbcluj.ro" 
+          style={{ color: "#06b6d4", fontWeight: "500", textDecoration: "underline" }}
+        >
+          Orban Klara
+        </a>
+      </p>
       </motion.div>
+
 
       {/* Subtle Animated Background */}
       <motion.div
@@ -106,5 +179,7 @@ export default function LandingPage() {
         }}
       />
     </div>
+
+    
   );
 }
