@@ -1,16 +1,14 @@
 // src/App.js
 
-import React from 'react';
+import React, { useState } from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import { motion } from "framer-motion";
 import { Waves } from "lucide-react";
-// import { HashRouter as Router, Route, Routes } from 'react-router-dom';
+import ProgressPage from './progress';
 
-// The imported ProgressPage is what the button will link to
-import ProgressPage from './progress'; // Assuming your details file is named 'src/progress.js'
-
-// --- START: Your Landing Page Content ---
 function LandingContent() {
+    const [showProgress, setShowProgress] = useState(false);
+
     const cardStyle = {
         backgroundColor: "#1e293b",
         border: "1px solid rgba(6, 182, 212, 0.3)",
@@ -34,8 +32,6 @@ function LandingContent() {
 
     return (
         <div style={{ minHeight: "100vh", background: "linear-gradient(#0f172a, #1e293b, #0f172a)", color: "white", display: "flex", flexDirection: "column", alignItems: "center" }}>
-            
-            {/* Hero Section */}
             <motion.div
                 initial={{ opacity: 0, y: -50 }}
                 animate={{ opacity: 1, y: 0 }}
@@ -46,15 +42,7 @@ function LandingContent() {
                     <Waves size={48} color="#06b6d4" />
                     ArctiCODE
                 </h1>
-                <h2
-                    style={{
-                        fontSize: "1.5rem",
-                        fontWeight: "500",
-                        color: "#06b6d4",
-                        marginBottom: "16px",
-                        textAlign: "center",
-                    }}
-                >
+                <h2 style={{ fontSize: "1.5rem", fontWeight: "500", color: "#06b6d4", marginBottom: "16px", textAlign: "center" }}>
                     Underwater Ice Mapping for Safe Polar Navigation
                 </h2>
                 <p style={{ fontSize: "1.125rem", color: "#cbd5e1" }}>
@@ -63,72 +51,14 @@ function LandingContent() {
                 </p>
             </motion.div>
 
-            {/* Open Position Section */}
-            {/*
-            <motion.div
-                initial={{ opacity: 0, y: 50 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 1 }}
-                style={{ marginTop: "80px", maxWidth: "1000px", display: "grid", gridTemplateColumns: "1fr 1fr", gap: "32px", padding: "16px" }}
-            >
-                <div style={cardStyle}>
-                    <h2 style={{ fontSize: "1.5rem", fontWeight: "600", color: "#06b6d4", marginBottom: "16px" }}>We’re Looking For:</h2>
-                    <p style={{ color: "#cbd5e1" }}>
-                        We’re looking for a passionate and motivated <span style={{ color: "#06b6d4", fontWeight: "500" }}>student</span> who is team-oriented, passionate about real-world innovation, and eager to learn.
-                    </p>
-                    <p style={{ color: "#cbd5e1", marginTop: "16px" }}>Competences awaited:</p>
-                    <ul style={{ color: "#cbd5e1", marginTop: "12px", listStyle: "disc inside", lineHeight: "1.6" }}>
-                        <li>Strong knowledge in Python</li>
-                        <li>Experience in Machine Learning</li>
-                        <li>Good communication skills</li>
-                        <li>Ability to take initiatives</li>
-                        <li>Adaptability in group projects</li>
-                        <li>Fluency in both German and English</li>
-                    </ul>
-                </div>
-
-                <div style={cardStyle}>
-                    <h2 style={{ fontSize: "1.5rem", fontWeight: "600", color: "#06b6d4", marginBottom: "16px" }}>What We Offer:</h2>
-                    <p style={{ color: "#cbd5e1" }}>
-                        By joining our team, you’ll gain hands-on experience and contribute to real-world polar research:
-                    </p>
-                    <p style={{ color: "#cbd5e1", marginTop: "16px" }}>Opportunities offered:</p>
-                    <ul style={{ color: "#cbd5e1", marginTop: "12px", listStyle: "disc inside", lineHeight: "1.6" }}>
-                        <li>Work with autonomous underwater drones and sensors </li>
-                        <li>Hands-on experience in 3D mapping & ML</li>
-                        <li>Collaboration with international teams</li>
-                        <li>Flexible hybrid work setup</li>
-                        <li>Shape the future of polar navigation</li>
-                    </ul>
-                </div>
-
-          </motion.div> */}
-
-            {/* Project Image */}
-            <div style={{ 
-                width: "100%", 
-                maxWidth: "900px", 
-                margin: "40px 0", 
-                overflow: "hidden", 
-                borderRadius: "24px", 
-                boxShadow: "0 10px 30px rgba(0,0,0,0.4)"
-            }}>
+            <div style={{ width: "100%", maxWidth: "900px", margin: "40px 0", overflow: "hidden", borderRadius: "24px", boxShadow: "0 10px 30px rgba(0,0,0,0.4)" }}>
                 <img 
-                    // FIX 1: Use PUBLIC_URL for correct path in subdirectory
                     src={process.env.PUBLIC_URL + "/drone.png"} 
                     alt="Underwater Ice Mapping Drone" 
-                    style={{ 
-                        width: "100%", 
-                        height: "auto", 
-                        display: "block",
-                        borderRadius: "24px"
-                    }} 
+                    style={{ width: "100%", height: "auto", display: "block", borderRadius: "24px" }} 
                 />
             </div>
 
-
-            {/* Additional Project Details */}
             <div style={{ maxWidth: "900px", marginTop: "48px", padding: "16px", color: "#cbd5e1", lineHeight: "1.7" }}>
                 <h3 style={{ fontSize: "1.75rem", fontWeight: "600", color: "#06b6d4", marginBottom: "16px" }}>
                     About the Project
@@ -147,7 +77,6 @@ function LandingContent() {
                 </p>
             </div>
 
-
             <motion.div
                 initial={{ opacity: 0 }}
                 whileInView={{ opacity: 1 }}
@@ -159,13 +88,13 @@ function LandingContent() {
                     style={buttonStyle}
                     onMouseOver={e => e.currentTarget.style.backgroundColor = "#0ea5e9"}
                     onMouseOut={e => e.currentTarget.style.backgroundColor = "#06b6d4"}
-                    // FIX 2: Correct the path to include the subdirectory and correct file name
-                    onClick={() => window.location.href = "/autonomous-shipping/progress"}
+                    onClick={() => setShowProgress(true)}
                 >
                     YES
                 </button>
 
-                {/* For More Information */}
+                {showProgress && <ProgressPage />}
+
                 <p style={{ marginTop: "24px", color: "#94a3b8", fontSize: "0.95rem", fontStyle: "italic" }}>
                     For more information, contact:{" "}
                     <a 
@@ -177,8 +106,6 @@ function LandingContent() {
                 </p>
             </motion.div>
 
-
-            {/* Subtle Animated Background */}
             <motion.div
                 animate={{ backgroundPosition: ["0% 50%", "100% 50%", "0% 50%"] }}
                 transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
@@ -192,16 +119,12 @@ function LandingContent() {
         </div>
     );
 }
-// --- END: Your Landing Page Content ---
 
 function App() {
   return (
     <Router basename="/autonomous-shipping"> 
       <Routes>
-        {/* If the URL is just /autonomous-shipping, show the landing content */}
         <Route path="/" element={<LandingContent />} />
-        
-        {/* If the URL is /autonomous-shipping/progress, show the details page */}
         <Route path="/progress" element={<ProgressPage />} />
       </Routes>
     </Router>
