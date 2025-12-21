@@ -4,6 +4,7 @@ import React from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import { motion } from "framer-motion";
 import { Waves } from "lucide-react";
+import { HashRouter as Router, Route, Routes } from 'react-router-dom';
 
 // The imported ProgressPage is what the button will link to
 import ProgressPage from './progress'; // Assuming your details file is named 'src/progress.js'
