@@ -2,7 +2,7 @@
 
 import React, { useState } from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 import { Waves } from "lucide-react";
 import ProgressPage from './progress';
 
@@ -81,19 +81,30 @@ function LandingContent() {
                 initial={{ opacity: 0 }}
                 whileInView={{ opacity: 1 }}
                 transition={{ duration: 1 }}
-                style={{ marginTop: "80px", marginBottom: "80px", textAlign: "center" }}
+                style={{ marginTop: "80px", marginBottom: "80px", textAlign: "center", width: "100%", maxWidth: "900px" }}
             >
-                <h3 style={{ fontSize: "1.5rem", fontWeight: "600", marginBottom: "16px" }}>Ready to find out more?</h3>
                 <button
                     style={buttonStyle}
                     onMouseOver={e => e.currentTarget.style.backgroundColor = "#0ea5e9"}
                     onMouseOut={e => e.currentTarget.style.backgroundColor = "#06b6d4"}
-                    onClick={() => setShowProgress(true)}
+                    onClick={() => setShowProgress(!showProgress)}
                 >
-                    YES
+                    {showProgress ? "CLOSE" : "YES"}
                 </button>
 
-                {showProgress && <ProgressPage />}
+                <AnimatePresence>
+                    {showProgress && (
+                        <motion.div
+                            initial={{ height: 0, opacity: 0 }}
+                            animate={{ height: "auto", opacity: 1 }}
+                            exit={{ height: 0, opacity: 0 }}
+                            transition={{ duration: 0.5, ease: "easeInOut" }}
+                            style={{ overflow: "hidden", marginTop: "24px", borderRadius: "16px", boxShadow: "0 5px 20px rgba(0,0,0,0.3)", backgroundColor: "#1e293b", padding: "16px" }}
+                        >
+                            <ProgressPage />
+                        </motion.div>
+                    )}
+                </AnimatePresence>
 
                 <p style={{ marginTop: "24px", color: "#94a3b8", fontSize: "0.95rem", fontStyle: "italic" }}>
                     For more information, contact:{" "}
