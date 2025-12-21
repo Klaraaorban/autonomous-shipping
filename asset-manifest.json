@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/autonomous-shipping/static/css/main.e6c13ad2.css",
-    "main.js": "/autonomous-shipping/static/js/main.12520194.js",
+    "main.js": "/autonomous-shipping/static/js/main.6f7b8076.js",
     "static/js/453.34a45f6d.chunk.js": "/autonomous-shipping/static/js/453.34a45f6d.chunk.js",
     "index.html": "/autonomous-shipping/index.html",
     "main.e6c13ad2.css.map": "/autonomous-shipping/static/css/main.e6c13ad2.css.map",
-    "main.12520194.js.map": "/autonomous-shipping/static/js/main.12520194.js.map",
+    "main.6f7b8076.js.map": "/autonomous-shipping/static/js/main.6f7b8076.js.map",
     "453.34a45f6d.chunk.js.map": "/autonomous-shipping/static/js/453.34a45f6d.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.e6c13ad2.css",
-    "static/js/main.12520194.js"
+    "static/js/main.6f7b8076.js"
   ]
 }
