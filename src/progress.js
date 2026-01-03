@@ -36,6 +36,12 @@ export default function ProgressPage() {
                 </h2>
 
                 <motion.div {...cardHover} style={cardStyle}>
+                    <a href="https://docs.google.com/presentation/d/1WAUkq085-KkG7adkeS0a0GOhy2rgG5lz/edit?usp=sharing&ouid=110491990081584974378&rtpof=true&sd=true" target="_blank" rel="noopener noreferrer" style={linkStyle}>
+                        Rostock Week Presentation
+                    </a>
+                </motion.div>
+
+                                <motion.div {...cardHover} style={cardStyle}>
                     <a href="https://docs.google.com/presentation/d/1MDdGaZeodeDjGZvdQdsFH25OKKHdTL9Y/edit?usp=sharing&ouid=110491990081584974378&rtpof=true&sd=true" target="_blank" rel="noopener noreferrer" style={linkStyle}>
                         Romania Intensive Week Review
                     </a>
@@ -59,12 +65,15 @@ export default function ProgressPage() {
                     </a>
                 </motion.div>
 
-                <h2 style={{ fontSize: "1.75rem", fontWeight: "600", color: "#06b6d4", margin: "40px 0 8px" }}>
-                    Collaboration & Location
+
+                <h2 style={{ fontSize: "1.75rem", fontWeight: "600", color: "#06b6d4", margin: "40px 0 8px", textAlign: "center" }}>
+                    Collaboration
                 </h2>
-                <p style={{ lineHeight: 1.8, marginBottom: "20px" }}>
-                    This project is a collaboration between the <strong>University of Rostock in Germany</strong> and <strong>Babeș-Bolyai University in Romania</strong>. Students have a flexible hybrid environment, contributing from both Rostock and Cluj-Napoca.
-                </p>
+                <p style={{ lineHeight: 1.8, marginBottom: "20px", textAlign: "center" }}>
+                    
+                    ArctiCODE is a collaborative student research project between the <strong>University of Rostock (Germany)</strong> and <strong>Babeș-Bolyai University (Romania)</strong>.
+                    The project operates in a hybrid academic environment, with research and development taking place in both Rostock and Cluj-Napoca.
+                    </p>
             </motion.div>
         </div>
     );
